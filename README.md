@@ -13,4 +13,4 @@ python main.py
 uv run main.py
 ```
 
-Результаты будут в файлах products.xlsx и filtered_products.xlsx
+Результаты будут в файлах results/products.xlsx и results/filtered_products.xlsx
