@@ -16,7 +16,7 @@ class Product:
     supplier_link: str
     sizes: str
     quantity: int
-    reviewRating: int
+    reviewRating: float
     feedbacks_count: int
 
     @property

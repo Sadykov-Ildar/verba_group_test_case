@@ -17,8 +17,8 @@ class WildberriesAPIParser:
         if sizes:
             try:
                 # Цена приходит в копейках, превращаем в рубли
-                price = sizes[0]["price"]["basic"] / 100
-            except KeyError:
+                price = sizes[0]["price"]["product"] / 100
+            except (KeyError, IndexError):
                 price = 0
             sizes_str = ", ".join(x["name"] for x in sizes)
 

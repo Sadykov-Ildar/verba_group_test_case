@@ -19,6 +19,7 @@ def get_filtered_products(
     :param country: Страна производства
     :return:
     """
+    country = country.lower()
     result = []
     for product in products:
         if product.reviewRating < min_rating:
@@ -28,7 +29,7 @@ def get_filtered_products(
         if product.options:
             parsed_options = json.loads(product.options)
             product_country = parsed_options.get("Страна производства", "")
-            if product_country != country:
+            if product_country.lower() != country:
                 continue
 
         result.append(product)
