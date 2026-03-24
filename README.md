@@ -9,7 +9,8 @@ python main.py
 
 Или с помощью uv:
 
-
 ```bash
 uv run main.py
 ```
+
+Результаты будут в файлах products.xlsx и filtered_products.xlsx
