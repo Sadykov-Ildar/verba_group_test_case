@@ -1,4 +1,5 @@
 import json
+import os
 
 from dtos import Product
 from get_token import get_token
@@ -38,6 +39,10 @@ def get_filtered_products(
 
 
 def main():
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    results_dir = os.path.join(base_dir, "results")
+    os.makedirs(results_dir, exist_ok=True)
+
     cookies = {
         "x_wbaas_token": get_token(),
     }
@@ -48,10 +53,10 @@ def main():
         wb_repo=WildberriesDataFetcher(search_str=search_str, cookies=cookies),
     )
     products = api.get_products()
-    save_to_xlsx(products, "products.xlsx")
+    save_to_xlsx(products, "results/products.xlsx")
 
     filtered_products = get_filtered_products(products, 4.5, 10000, "Россия")
-    save_to_xlsx(filtered_products, "filtered_products.xlsx")
+    save_to_xlsx(filtered_products, "results/filtered_products.xlsx")
 
 
 if __name__ == "__main__":
