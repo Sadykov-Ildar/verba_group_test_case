@@ -1,0 +1,12 @@
+[project]
+name = "wb-parser-test-for-verba"
+version = "0.1.0"
+description = "Add your description here"
+requires-python = ">=3.14"
+dependencies = [
+    "openpyxl>=3.1.5",
+    "requests>=2.32.5",
+    "selenium>=4.41.0",
+    "setuptools>=82.0.1",
+    "undetected-chromedriver>=3.5.5",
+]
