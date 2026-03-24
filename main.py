@@ -40,7 +40,6 @@ def main():
     cookies = {
         "x_wbaas_token": get_token(),
     }
-    exit()
     search_str = "пальто из натуральной шерсти"
 
     api = WildberriesAPIHandler(
